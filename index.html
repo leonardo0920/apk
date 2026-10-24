@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MaraTour · App para conductores</title>
+<meta name="description" content="Descarga la app de conductores de MaraTour, la empresa de taxis de Maracaibo, Zulia.">
+<meta name="theme-color" content="#111111">
+<style>
+  :root {
+    --bg: #fafaf7;
+    --text: #151515;
+    --muted: #6b6b66;
+    --line: #e6e6df;
+    --accent: #f5b800;
+    --accent-text: #151515;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #111111;
+      --text: #f4f4ef;
+      --muted: #9a9a93;
+      --line: #2a2a27;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  header, main, footer { width: 100%; max-width: 560px; margin: 0 auto; padding: 0 20px; }
+  header { padding-top: 28px; }
+  .logo { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1.15rem; letter-spacing: -0.01em; }
+  .logo i {
+    width: 30px; height: 30px; border-radius: 8px; background: var(--accent);
+    display: grid; place-items: center; color: var(--accent-text); font-style: normal; font-size: 1rem;
+  }
+  main { flex: 1; padding-top: 12vh; padding-bottom: 48px; }
+  .tag { color: var(--muted); font-size: .85rem; text-transform: uppercase; letter-spacing: .12em; margin-bottom: 14px; }
+  h1 { font-size: clamp(2rem, 8vw, 2.9rem); line-height: 1.1; letter-spacing: -0.03em; margin-bottom: 18px; }
+  h1 span { background: linear-gradient(transparent 62%, var(--accent) 62%); }
+  .lead { color: var(--muted); font-size: 1.05rem; margin-bottom: 32px; }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+    background: var(--accent); color: var(--accent-text);
+    font-weight: 700; font-size: 1.05rem; text-decoration: none;
+    padding: 16px 28px; border-radius: 14px; width: 100%;
+    transition: transform .12s ease, filter .12s ease;
+  }
+  .btn:hover { filter: brightness(1.05); transform: translateY(-1px); }
+  .btn:active { transform: translateY(0); }
+  .btn:focus-visible { outline: 3px solid var(--text); outline-offset: 3px; }
+  .btn svg { width: 20px; height: 20px; }
+  .meta { color: var(--muted); font-size: .85rem; text-align: center; margin-top: 12px; }
+  section { margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--line); }
+  h2 { font-size: 1rem; margin-bottom: 14px; letter-spacing: -0.01em; }
+  ul.list { list-style: none; display: grid; gap: 10px; color: var(--muted); }
+  ul.list li { padding-left: 22px; position: relative; }
+  ul.list li::before { content: ""; position: absolute; left: 0; top: .62em; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+  ol.steps { color: var(--muted); padding-left: 20px; display: grid; gap: 8px; }
+  ol.steps li::marker { color: var(--text); font-weight: 700; }
+  footer { padding-bottom: 28px; color: var(--muted); font-size: .85rem; }
+</style>
+</head>
+<body>
+  <header>
+    <div class="logo"><i>M</i> MaraTour</div>
+  </header>
+
+  <main>
+    <p class="tag">App para conductores</p>
+    <h1>Maneja con <span>MaraTour</span>.</h1>
+    <p class="lead">
+      MaraTour es una empresa de taxis de Maracaibo, Zulia. Esta aplicación es para
+      nuestros conductores: les permite conectarse con la empresa y atender los servicios
+      de forma simple y organizada, directamente desde su teléfono.
+    </p>
+
+    <a class="btn" href="app-release.apk" download="MaraTour-Conductores.apk">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 20h16"/></svg>
+      Descargar para Android
+    </a>
+    <p class="meta">Archivo APK · 55 MB</p>
+
+    <section>
+      <h2>Cómo instalar</h2>
+      <ol class="steps">
+        <li>Descarga el archivo desde tu teléfono Android.</li>
+        <li>Ábrelo desde las descargas o la barra de notificaciones.</li>
+        <li>Si Android lo pide, permite instalar apps desde esta fuente.</li>
+        <li>Toca <strong>Instalar</strong> y abre MaraTour.</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Importante</h2>
+      <ul class="list">
+        <li>Solo para conductores de MaraTour.</li>
+        <li>Disponible únicamente para Android.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>© <span id="y">2026</span> MaraTour · Maracaibo, Zulia, Venezuela</footer>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
